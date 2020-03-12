@@ -1,0 +1,16 @@
+body {
+  width: 500px;
+}
+
+button {
+  margin-left: 30px;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  height: 30px;
+}
