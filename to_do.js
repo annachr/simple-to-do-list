@@ -1,38 +1,53 @@
-const newInput = document.getElementById('newInput');
-const inputField = document.getElementById('inputField');
-const listItems = document.getElementById('myList');
-const doneItems = document.getElementById('doneItems');
+const inputField = document.getElementById('inputField')
+const todoItems = document.getElementById('todoItems')
+const doneItems = document.getElementById('doneItems')
 
-newInput.addEventListener('submit', (e) => {
-  e.preventDefault();
-  newItem(inputField.value);
-})
+let toDos = []
+let done = []
 
-function newItem() {
-  const htmlText = `
-    <li>
-      <span>${inputField.value}</span>
-      <button onclick="deleteItem(this)">Delete</button>
-      <button onclick="doneItem(this)">Done</button>
-    </li>`;
-  listItems.insertAdjacentHTML('beforeend', htmlText);
-  inputField.value = '';
+function clearInput() {
   inputField.focus();
+  inputField.value = ' '
 }
 
-function doneItem(param) {
-  const completeItem = `
-  <li>
-    ${param.parentElement.firstElementChild.textContent}
-  </li>`;
-  doneItems.insertAdjacentHTML('beforeend', completeItem);
-  param.parentElement.remove();
-  console.log(completeItem)
+function addItem() {
+  const itemToAdd = {
+    id: toDos.length + 1,
+    name: inputField.value
+  }
+  toDos.push(itemToAdd)
+  clearInput()
+  displayToDo(itemToAdd)
 }
 
-function deleteItem(toBeDeleted) {
-  toBeDeleted.parentElement.remove()
+function displayToDo(element) {
+  const li = document.createElement('li')
+  li.innerHTML = element.name
+  todoItems.appendChild(li)
 }
+
+
+function addToDone() {
+  const doneItem = toDos.pop()
+  done.push({
+    id: done.length + 1,
+    name: doneItem.name
+  })
+  displayDone(doneItem);
+}
+
+function displayDone(element) {
+  const list = document.createElement('li')
+  list.innerHTML = element.name
+  doneItems.appendChild(list)
+  refreshToDos()
+}
+
+function refreshToDos() {
+  todoItems.lastChild.remove()
+}
+
+
 
 
 
