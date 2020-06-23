@@ -5,20 +5,21 @@
   <link rel="stylesheet" href="./to_do.css">
   <title>To Do List</title>
 </head>
-<body>
+<body onload="init()">
 <h1>To-do list</h1>
+<div class="wrapper">
   <input id="inputField" type="text" autocomplete="off">
-  <button id="createInput" onclick="addItem()">Create item</button>
-  <button id="addToDone" onclick="addToDone()">Add the last item to done</button>
+  <button id="createInput" class="button" onclick="addItem()">Create item</button>
+  <button class="button">Add to favourites</button>
+
+</div>
 <h3>Need to do:</h3>
 <ol id="todoItems">
 </ol>
 
-
-
 <h3>Done:</h3>
 <ol id="doneItems"></ol>
-
+<button id="clearAll" class="button">Clear all</button>
 <script src="to_do.js"></script>
 </body>
 </html>
