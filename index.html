@@ -10,8 +10,15 @@
 <div class="wrapper">
   <input id="inputField" type="text" autocomplete="off">
   <button id="createInput" class="button" onclick="addItem()">Create item</button>
-  <button class="button">Add to favourites</button>
+  <button id="addFavourite" class="button">Add to favourites</button>
+</div>
+<h3>Favourites:</h3>
+<div class="wrapper">
+  <select id="select">
 
+  </select>
+  <button class="button" id="favourite">Add favourite to list</button>
+  <button class="button" id="removeFavourite">Remove favourite</button>
 </div>
 <h3>Need to do:</h3>
 <ol id="todoItems">

@@ -23,8 +23,16 @@ li {
   margin-bottom: 5px;
   margin-top: 5px;
 }
+
+select {
+  width: 200px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
 #inputField {
   line-height: 20px;
+  width: 200px;
 }
 
 #clearAll {

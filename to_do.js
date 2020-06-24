@@ -3,12 +3,18 @@ const todoItems = document.getElementById('todoItems')
 const doneItems = document.getElementById('doneItems')
 const createItemButton = document.getElementById('createInput');
 const clearAll = document.getElementById('clearAll')
+const addToFavourites = document.getElementById('addFavourite')
+const select = document.getElementById('select')
+const favourite = document.getElementById('favourite')
+const removeFavourite = document.getElementById('removeFavourite')
+const options = document.querySelectorAll('option')
 
 let toDos = []
+let favourites = []
 let done = []
 
 function init() {
-  clearInput()
+  clearInput();
 }
 
 inputField.addEventListener('keyup', function (event) {
@@ -20,15 +26,32 @@ function addItem() {
       id: toDos.length + 1,
       name: inputField.value,
     }
-    toDos.push(itemToAdd)
-    clearInput()
-    displayToDo(itemToAdd)
+    toDos.push(itemToAdd);
+    clearInput();
+    displayToDo(itemToAdd);
+}
+
+addToFavourites.addEventListener('click', addFavourite);
+
+function addFavourite() {
+  const favouriteToAdd = inputField.value;
+  favourites.push(favouriteToAdd);
+  displayFavourite(favouriteToAdd);
+  clearInput();
+}
+
+function displayFavourite() {
+  const option = document.createElement('option');
+  option.innerText = inputField.value;
+  select.appendChild(option);
+  console.log(inputField.value)
+
 }
 
 function clearInput() {
   inputField.focus();
-  inputField.value = ''
-  createItemButton.disabled = true
+  inputField.value = '';
+  createItemButton.disabled = true;
 }
 
 
@@ -47,48 +70,51 @@ function displayToDo(element) {
   deleteBtn.appendChild(document.createTextNode('✗'));
   li.appendChild(deleteBtn);
 
-  doneBtn.addEventListener('click', addToDone)
+  doneBtn.addEventListener('click', addToDone);
 
   deleteBtn.addEventListener('click', removeItem);
 }
 
+favourite.addEventListener('click', addFavouriteToDo)
+function addFavouriteToDo() {
+  const itemToAdd = {
+    id: toDos.length + 1,
+    name: select.value,
+  }
+  toDos.push(itemToAdd);
+  clearInput();
+  displayToDo(itemToAdd);
+}
+
+
 function removeItem(e) {
   let li = e.target.parentElement;
-  e.target.parentElement.remove(li);
+  e.target.parentElement.remove(li)
+}
+
+removeFavourite.addEventListener('click', removeFavouriteItem)
+
+function removeFavouriteItem() {
+  console.log(options)
+  console.log(select.value)
+  console.log(favourites)
 }
 
 function addToDone(e) {
-  let doneItem = e.target.parentElement.firstChild.textContent
-  // done.push({
-  //   id: done.length + 1,
-  //   name: doneItem
-  // })
+  let doneItem = e.target.parentElement.firstChild.textContent;
   displayDone(doneItem);
   e.target.parentElement.remove();
   console.log(doneItem)
 }
 
-// function addToDone() {
-//   const doneItem = toDos.pop()
-//   done.push({
-//     id: done.length + 1,
-//     name: doneItem.name
-//   })
-//   displayDone(doneItem);
-// }
-
 function displayDone(element) {
-  const list = document.createElement('li')
-  list.innerHTML = element
+  const list = document.createElement('li');
+  list.innerHTML = element;
   doneItems.appendChild(list)
-  // refreshToDos()
 }
 
-// function refreshToDos() {
-//   todoItems.lastChild.remove()
-// }
 
-clearAll.addEventListener('click', clear)
+clearAll.addEventListener('click', clear);
 function clear() {
   window.location.reload()
 }
