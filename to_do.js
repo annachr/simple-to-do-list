@@ -95,16 +95,13 @@ function removeItem(e) {
 removeFavourite.addEventListener('click', removeFavouriteItem)
 
 function removeFavouriteItem() {
-  console.log(options)
-  console.log(select.value)
-  console.log(favourites)
+  select.remove(select.selectedIndex)
 }
 
 function addToDone(e) {
   let doneItem = e.target.parentElement.firstChild.textContent;
   displayDone(doneItem);
   e.target.parentElement.remove();
-  console.log(doneItem)
 }
 
 function displayDone(element) {

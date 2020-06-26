@@ -22,6 +22,7 @@ li {
   border-bottom: 1px solid black;
   margin-bottom: 5px;
   margin-top: 5px;
+
 }
 
 select {
@@ -44,8 +45,8 @@ select {
   width: 150px;
 }
 
+
 .deleteButton {
-  background-color: crimson;
   width: 25px;
   height: 25px;
   float: right;
@@ -54,10 +55,10 @@ select {
   justify-content: center;
   align-content: center;
   font-weight: bold;
+  background-color: limegreen;
 }
 
 .doneButton {
-  background-color: limegreen;
   width: 25px;
   height: 25px;
   float: right;
@@ -66,6 +67,7 @@ select {
   justify-content: center;
   align-content: center;
   font-weight: bold;
+  background-color: crimson;
 }
 
 @media (max-width: 685px) {
