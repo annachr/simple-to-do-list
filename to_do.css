@@ -43,6 +43,7 @@ select {
 .button {
   margin-left: 30px;
   width: 150px;
+  cursor: pointer;
 }
 
 

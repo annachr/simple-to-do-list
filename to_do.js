@@ -7,11 +7,10 @@ const addToFavourites = document.getElementById('addFavourite')
 const select = document.getElementById('select')
 const favourite = document.getElementById('favourite')
 const removeFavourite = document.getElementById('removeFavourite')
-const options = document.querySelectorAll('option')
+
 
 let toDos = []
 let favourites = []
-let done = []
 
 function init() {
   clearInput();
@@ -44,8 +43,6 @@ function displayFavourite() {
   const option = document.createElement('option');
   option.innerText = inputField.value;
   select.appendChild(option);
-  console.log(inputField.value)
-
 }
 
 function clearInput() {
@@ -86,7 +83,6 @@ function addFavouriteToDo() {
   displayToDo(itemToAdd);
 }
 
-
 function removeItem(e) {
   let li = e.target.parentElement;
   e.target.parentElement.remove(li)
@@ -109,7 +105,6 @@ function displayDone(element) {
   list.innerHTML = element;
   doneItems.appendChild(list)
 }
-
 
 clearAll.addEventListener('click', clear);
 function clear() {
