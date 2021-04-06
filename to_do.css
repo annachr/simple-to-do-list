@@ -1,11 +1,17 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 body {
-  width: 80vw;
+  width: 80%;
   margin: 50px auto;
+  background-color: #122A30;
+  color: whitesmoke;
+}
+
+h1, h3 {
+  color: #F2E221
 }
 
 ol {
@@ -22,7 +28,6 @@ li {
   border-bottom: 1px solid black;
   margin-bottom: 5px;
   margin-top: 5px;
-
 }
 
 select {
@@ -40,12 +45,29 @@ select {
   margin: 0 auto;
 }
 
+.main {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 .button {
   margin-left: 30px;
   width: 150px;
   cursor: pointer;
+  border-radius: 15px;
+  height: 2rem;
+  border: none;
 }
 
+.button:hover {
+  background-color: #F2E221;
+  transition: .5s ease;
+}
 
 .deleteButton {
   width: 25px;

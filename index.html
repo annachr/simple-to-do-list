@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="./to_do.css">
-  <title>To Do List</title>
-</head>
-<body onload="init()">
-<h1>To-do list</h1>
-<div class="wrapper">
-  <input id="inputField" type="text" autocomplete="off">
-  <button id="createInput" class="button" onclick="addItem()">Create item</button>
-  <button id="addFavourite" class="button">Add to favourites</button>
-</div>
-<h3>Favourites:</h3>
-<div class="wrapper">
-  <select id="select">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./to_do.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+    <title>To Do List</title>
+  </head>
+  <body onload="init()">
+  <div class="main">
+    <h1>To-do list</h1>
+    <div class="wrapper">
+      <input id="inputField" type="text" autocomplete="off">
+      <button id="createInput" class="button" onclick="addItem()">Create item</button>
+      <button id="addFavourite" class="button">Add to favourites</button>
+    </div>
+    <h3>Favourites:</h3>
+    <div class="wrapper">
+      <select id="select">
 
-  </select>
-  <button class="button" id="favourite">Add favourite to list</button>
-  <button class="button" id="removeFavourite">Remove favourite</button>
-</div>
-<h3>Need to do:</h3>
-<ol id="todoItems" contenteditable="true">
-</ol>
+      </select>
+      <button class="button" id="favourite">Add favourite to list</button>
+      <button class="button" id="removeFavourite">Remove favourite</button>
+    </div>
+    <h3>Need to do:</h3>
+    <ol id="todoItems" contenteditable="true">
+    </ol>
 
-<h3>Done:</h3>
-<ol id="doneItems"></ol>
-<button id="clearAll" class="button">Clear all</button>
+    <h3>Done:</h3>
+    <ol id="doneItems"></ol>
+    <button id="clearAll" class="button">Clear all</button>
+  </div>
 
-<script src="to_do.js"></script>
-</body>
+
+    <script src="to_do.js"></script>
+  </body>
 </html>
